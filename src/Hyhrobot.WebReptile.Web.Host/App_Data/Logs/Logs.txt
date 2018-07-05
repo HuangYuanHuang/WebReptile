@@ -1679,3 +1679,51 @@ INFO  2018-07-04 23:25:52,904 [10   ] soft.AspNetCore.Hosting.Internal.WebHost -
 INFO  2018-07-04 23:25:52,949 [11   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:21021/swagger/v1/swagger.json  
 INFO  2018-07-04 23:25:52,955 [11   ] uthentication.JwtBearer.JwtBearerHandler - JwtBearer was not authenticated. Failure message: No SecurityTokenValidator available for token: null
 INFO  2018-07-04 23:25:53,185 [11   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 236.9278ms 200 application/json;charset=utf-8
+DEBUG 2018-07-04 23:29:30,886 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2018-07-04 23:29:30,907 [1    ] Abp.Modules.AbpModuleManager             - Found 15 ABP modules in total.
+DEBUG 2018-07-04 23:29:30,923 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Hyhrobot.WebReptile.Web.Host.Startup.WebReptileWebHostModule, Hyhrobot.WebReptile.Web.Host, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-07-04 23:29:30,925 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Hyhrobot.WebReptile.WebReptileWebCoreModule, Hyhrobot.WebReptile.Web.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-07-04 23:29:30,925 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Hyhrobot.WebReptile.WebReptileApplicationModule, Hyhrobot.WebReptile.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-07-04 23:29:30,925 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Hyhrobot.WebReptile.WebReptileCoreModule, Hyhrobot.WebReptile.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-07-04 23:29:30,925 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.ZeroCore, Version=3.7.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-07-04 23:29:30,926 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCommonModule, Abp.Zero.Common, Version=3.7.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-07-04 23:29:30,926 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=3.7.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-07-04 23:29:30,926 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=3.7.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-07-04 23:29:30,926 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Hyhrobot.WebReptile.EntityFrameworkCore.WebReptileEntityFrameworkModule, Hyhrobot.WebReptile.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-07-04 23:29:30,927 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFrameworkCore.AbpZeroCoreEntityFrameworkCoreModule, Abp.ZeroCore.EntityFrameworkCore, Version=3.7.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-07-04 23:29:30,927 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule, Abp.EntityFrameworkCore, Version=3.7.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-07-04 23:29:30,927 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkCommonModule, Abp.EntityFramework.Common, Version=3.7.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-07-04 23:29:30,927 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.AbpAspNetCoreModule, Abp.AspNetCore, Version=3.7.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-07-04 23:29:30,927 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=3.7.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-07-04 23:29:30,927 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.SignalR.AbpAspNetCoreSignalRModule, Abp.AspNetCore.SignalR, Version=3.7.2.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-07-04 23:29:30,932 [1    ] Abp.Modules.AbpModuleManager             - 15 modules loaded.
+DEBUG 2018-07-04 23:29:30,982 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2018-07-04 23:29:30,982 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2018-07-04 23:29:30,982 [1    ] o.Configuration.LanguageManagementConfig - Converted WebReptile (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2018-07-04 23:29:30,982 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2018-07-04 23:29:31,261 [1    ] ameworkCore.AbpEntityFrameworkCoreModule - Registering DbContext: Hyhrobot.WebReptile.EntityFrameworkCore.WebReptileDbContext, Hyhrobot.WebReptile.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2018-07-04 23:29:31,603 [1    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2018-07-04 23:29:31,661 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2018-07-04 23:29:31,710 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2018-07-04 23:29:31,735 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: WebReptile
+DEBUG 2018-07-04 23:29:31,765 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2018-07-04 23:29:31,795 [1    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Abp.BackgroundJobs.BackgroundJobManager
+DEBUG 2018-07-04 23:29:31,835 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 10 classes define auto mapping attributes
+DEBUG 2018-07-04 23:29:31,835 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hyhrobot.WebReptile.Models.TokenAuth.ExternalLoginProviderInfoModel
+DEBUG 2018-07-04 23:29:31,839 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hyhrobot.WebReptile.Users.Dto.CreateUserDto
+DEBUG 2018-07-04 23:29:31,840 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hyhrobot.WebReptile.Users.Dto.UserDto
+DEBUG 2018-07-04 23:29:31,840 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hyhrobot.WebReptile.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2018-07-04 23:29:31,840 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hyhrobot.WebReptile.Sessions.Dto.UserLoginInfoDto
+DEBUG 2018-07-04 23:29:31,840 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hyhrobot.WebReptile.Roles.Dto.CreateRoleDto
+DEBUG 2018-07-04 23:29:31,840 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hyhrobot.WebReptile.Roles.Dto.PermissionDto
+DEBUG 2018-07-04 23:29:31,840 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hyhrobot.WebReptile.Roles.Dto.RoleDto
+DEBUG 2018-07-04 23:29:31,841 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hyhrobot.WebReptile.MultiTenancy.Dto.CreateTenantDto
+DEBUG 2018-07-04 23:29:31,841 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Hyhrobot.WebReptile.MultiTenancy.Dto.TenantDto
+INFO  2018-07-04 23:29:36,279 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:21021/api/services/app/Session/GetCurrentLoginInformations  
+INFO  2018-07-04 23:29:36,387 [10   ] uthentication.JwtBearer.JwtBearerHandler - JwtBearer was not authenticated. Failure message: No SecurityTokenValidator available for token: null
+INFO  2018-07-04 23:29:37,218 [10   ] ore.Mvc.Internal.ControllerActionInvoker - Route matched with {area = "app", action = "GetCurrentLoginInformations", controller = "Session"}. Executing action Hyhrobot.WebReptile.Sessions.SessionAppService.GetCurrentLoginInformations (Hyhrobot.WebReptile.Application)
+INFO  2018-07-04 23:29:37,342 [10   ] ore.Mvc.Internal.ControllerActionInvoker - Executing action method Hyhrobot.WebReptile.Sessions.SessionAppService.GetCurrentLoginInformations (Hyhrobot.WebReptile.Application) - Validation state: Valid
+INFO  2018-07-04 23:29:37,349 [10   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action method Hyhrobot.WebReptile.Sessions.SessionAppService.GetCurrentLoginInformations (Hyhrobot.WebReptile.Application), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 4.7024ms.
+INFO  2018-07-04 23:29:37,377 [10   ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
+INFO  2018-07-04 23:29:37,465 [10   ] ore.Mvc.Internal.ControllerActionInvoker - Executed action Hyhrobot.WebReptile.Sessions.SessionAppService.GetCurrentLoginInformations (Hyhrobot.WebReptile.Application) in 242.9683ms
+INFO  2018-07-04 23:29:37,479 [10   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 1204.9788ms 200 application/json; charset=utf-8

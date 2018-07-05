@@ -13,6 +13,9 @@ namespace Hyhrobot.WebReptile.Crawler.Dto
     public class CrawlerCompletedDto : BaseEventDto
     {
 
+        public List<string> ListUrl { get; set; }
+        public string Key { get; set; }
+        public int KeyNum { get; set; }
         public int ThreadId { get; set; }
 
         public long ElapsedMilliseconds { get; set; }
@@ -21,7 +24,7 @@ namespace Hyhrobot.WebReptile.Crawler.Dto
 
         public override string ToString()
         {
-            return $"Url:[{Url}],Level:{Level}, ThreadId:{ThreadId},ElapsedMilliseconds:{ElapsedMilliseconds}";
+            return $"Url:【{Url}】,Level:{Level},关键字:【{Key}】:匹配次数:【{KeyNum}】,ThreadId:{ThreadId},ElapsedMilliseconds:{ElapsedMilliseconds}";
         }
     }
 

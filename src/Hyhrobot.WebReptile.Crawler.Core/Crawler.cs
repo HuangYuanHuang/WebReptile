@@ -1,39 +1,54 @@
-﻿using System;
+﻿using Hyhrobot.WebReptile.Crawler.Core.Dto;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.IO.Compression;
+using System.Linq;
 using System.Net;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Threading;
 using System.Threading.Tasks;
 
-namespace Hyhrobot.WebReptile.Crawler
+namespace Hyhrobot.WebReptile.Crawler.Core
 {
-    public abstract class BaseCrawler
+    public class Crawler
     {
+        static Dictionary<string, bool> CrawlerVisitDict = new Dictionary<string, bool>();
+
+        static bool IsRun = true;
         public CookieContainer CookiesContainer { get; set; }
         public Uri CrawlerUrl { get; set; }
         public string Proxy { get; set; }
 
         public int Level { get; set; }
 
-        public string Key { get; set; }
+        public List<string> Keys { get; set; }
         public string Domain { set; get; }
         public event Action<Dto.CrawlerCompletedDto> CrawlerCompletedEvent;
 
         public event Action<Dto.CrawlerErrorDto> CrawlerErrorEvent;
-        public BaseCrawler(Uri url, int level, string key, string domain, string proxy = null)
+        public Crawler(Uri url, int level, List<string> keys, string domain, string proxy = null)
         {
             CrawlerUrl = url;
-            Key = key;
+            Keys = keys;
             Proxy = proxy;
             Level = level;
             Domain = domain;
             CookiesContainer = new CookieContainer();
         }
+        public static void StopAll()
+        {
+            IsRun = false;
+        }
+
         public string Start()
         {
+            if (!IsRun)
+            {
+                return "";
+            }
             var pageSource = string.Empty;
             try
             {
@@ -92,9 +107,9 @@ namespace Hyhrobot.WebReptile.Crawler
                         }
                     }
                     scheme = response.ResponseUri.Scheme;
-                    if (!CrawlerRun.CrawlerVisitDict.ContainsKey(response.ResponseUri.AbsoluteUri))
+                    if (!CrawlerVisitDict.ContainsKey(response.ResponseUri.AbsoluteUri))
                     {
-                        CrawlerRun.CrawlerVisitDict.Add(response.ResponseUri.AbsoluteUri, true);
+                        CrawlerVisitDict.Add(response.ResponseUri.AbsoluteUri, true);
                     }
                 }
                 request.Abort();
@@ -106,7 +121,13 @@ namespace Hyhrobot.WebReptile.Crawler
                 var milliseconds = watch.ElapsedMilliseconds;//获取请求执行时间
 
                 var links = Regex.Matches(pageSource, @"<a[^>]*href=([""'])?(?<href>[^'""]+)\1[^>]*>", RegexOptions.IgnoreCase);
-                var linkKey = Regex.Matches(pageSource, Key, RegexOptions.IgnoreCase);
+                List<MatchKeyNode> listNode = new List<MatchKeyNode>();
+                Keys.ForEach(d =>
+                {
+                    var linkKey = Regex.Matches(pageSource, d, RegexOptions.IgnoreCase);
+                    listNode.Add(new MatchKeyNode() { Count = linkKey.Count, Key = d });
+                });
+
                 List<string> listUrls = new List<string>();
                 foreach (Match match in links)
                 {
@@ -117,13 +138,13 @@ namespace Hyhrobot.WebReptile.Crawler
                         {
                             value = value.Substring(2);
                         }
-                        if (!value.Contains(scheme))
+                        if (!(value.Contains("http")||value.Contains("https")))
                         {
-                            value = scheme + "://"+value;
+                            value = scheme + "://" + value;
                         }
-                        if (!CrawlerRun.CrawlerVisitDict.ContainsKey(value))
+                        if (!CrawlerVisitDict.ContainsKey(value))
                         {
-                            CrawlerRun.CrawlerVisitDict.Add(value, true);
+                            CrawlerVisitDict.Add(value, true);
                             listUrls.Add(value);
                         }
 
@@ -137,8 +158,7 @@ namespace Hyhrobot.WebReptile.Crawler
                     ThreadId = threadId,
                     Url = CrawlerUrl.AbsoluteUri,
                     ListUrl = listUrls,
-                    KeyNum = linkKey.Count,
-                    Key = Key
+                    MatchKeys = listNode
                 });
             }
             catch (Exception ex)
